@@ -1,0 +1,26 @@
+Strategy pattern defines a family of algorithms, encapsulates each one and make them interchangeable. Meaning that the client would likely
+and mostly use what the one that best fits him.
+
+From the earliest introduction of the duck we have successfully made use of strategy design pattern to rework the simIDick application.
+
+
+The design principles:
+1. Encapsulate what varies.
+2. Always code to an interface and not implementation.
+3. Favour Composition over inheritance.
+4. strive for loosely coupled design between objects that interact
+
+The Observer Pattern: Other makes use of the publisher to subscriber relationship or otherwise a many to one relationship where objects acts like observers
+to monitor the changes that have been updated in the publisher.
+The observer pattern defines a one-to many relationship dependency between objects so that when one object changes states, it dependants get notified
+and get updated automatically.
+In the case of our Observer design pattern we are looking at designing a weather application. In this application, the Subject which is the weather data
+goes to collect information from an API as to when weather conditions change and it updates the different screens that might want to make use of the data the way it comes
+for instance the displays for different screens.
+- The weatherData implements the subject as the concrete implementation of the Subject. The WeatherApp is then  composed in the display to be able to make use of them very well.
+
+Java on its own has implementation to the observer design pattern that does a pull or a push to the list of observers. We would see that in the package called JavaObserver.
+The java.util package provides the observable class that needs to be inherited to be able to perform the function of a subject.
+It also have an interface Observer interface that does the work of an observer.
+The java observable and the observer in the java utils have been deprecated. To achieve the same observer design pattern we will make use of propertyChangeListener of java
+I am to see more of this .......... JavaBeans and Swing.
