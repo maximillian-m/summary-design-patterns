@@ -1,15 +1,14 @@
 package com.maximillian;
 
-import com.maximillian.Observer_Pattern.Interfaces.Subject;
-import com.maximillian.Observer_Pattern.classes.CurrentConditionDisplay;
-import com.maximillian.Observer_Pattern.classes.WeatherData;
-import com.maximillian.design_pattern_intro_And_Strategy_Pattern.Ducks.Duck;
-import com.maximillian.design_pattern_intro_And_Strategy_Pattern.Ducks.MallardDuck;
-import com.maximillian.design_pattern_intro_And_Strategy_Pattern.Ducks.ModelDuck;
-import com.maximillian.design_pattern_intro_And_Strategy_Pattern.Fly.FlyWithRockets;
+import com.maximillian.decorator_pattern.decoratorCondiments.Chocolate;
+import com.maximillian.decorator_pattern.CoffeeTypes.Coffee;
+import com.maximillian.decorator_pattern.CoffeeTypes.Expressivo;
+import com.maximillian.decorator_pattern.decoratorCondiments.Milk;
+
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 //        Duck mallardDuck = new MallardDuck();
 //        mallardDuck.performFly();
 //        mallardDuck.performQuack();
@@ -19,11 +18,24 @@ public class Main {
 //        modelDuck.performFly();// initial fly behaviour says it cannot fly
 //        modelDuck.setFlyBahaviour(new FlyWithRockets());//here I set to set the flying capability at runtime
 //        modelDuck.performFly();
+//
+//        WeatherData weatherData = new WeatherData();
+//        CurrentConditionDisplay display = new CurrentConditionDisplay(weatherData);
+//        weatherData.setMeasurements(80, 65, 30.4f);
+//        weatherData.setMeasurements(82, 70, 29.2f);
+//        weatherData.setMeasurements(78, 90, 29.2f);
+        Coffee coffee = new Expressivo();
+        System.out.println(coffee.getDescription() +", " + "$" + coffee.getCost());
 
-        WeatherData weatherData = new WeatherData();
-        CurrentConditionDisplay display = new CurrentConditionDisplay(weatherData);
-        weatherData.setMeasurements(80, 65, 30.4f);
-        weatherData.setMeasurements(82, 70, 29.2f);
-        weatherData.setMeasurements(78, 90, 29.2f);
+        Coffee milkExpressivoTopping = new Milk(coffee);
+        System.out.println(milkExpressivoTopping.getDescription() + ", " + "$" + milkExpressivoTopping.getCost());
+
+        milkExpressivoTopping = new Chocolate(milkExpressivoTopping);
+        System.out.println(milkExpressivoTopping.getDescription() + ", " + "$" + milkExpressivoTopping.getCost());
+
+        String okayOkay = "Hello hello";
+        byte [] bytes = okayOkay.getBytes();
+
+        InputStream inputStream = new FileInputStream(new BufferedInputStream(new FileInputStream(new File(new ByteArrayInputStream(bytes).toString()))).toString());
     }
 }

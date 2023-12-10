@@ -1,0 +1,10 @@
+Decorator pattern involves having classes wrap another more like adding an extra functionality to a class.
+Imagine you have a coffee class that is super class and has child classes that describes types of coffee due to their
+ingredient content. we can be looking at the House-Blend coffee, Honey-coffee and the Black-African coffee. But then
+these coffees can have toppings like milk, honey, sugar or even chocolate. Then for each coffee type that has a topping or
+even varieties of toppings there are different prices for them. So if we are having a milk topping it should also include
+the price of the milk and the price of any other topping that might be added to the coffee. The total price here will be that
+of the coffee and the extra toppings...
+
+Instead of creating a super class and having the classes inherit the super class, which will make us create an overburdened
+class or even an over-laden class.
